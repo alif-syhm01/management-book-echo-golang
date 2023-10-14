@@ -1,6 +1,6 @@
 module management-book
 
-go 1.21.1
+go 1.20
 
 require (
 	github.com/go-playground/locales v0.14.1
