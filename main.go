@@ -25,7 +25,7 @@ func main() {
 	e.Logger.Fatal(e.Start(GetPort()))
 }
 
-func GetPort() {
+func GetPort() string {
 	port := os.Getenv("PORT")
 	return ":" + port
 }
