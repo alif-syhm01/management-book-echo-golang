@@ -4,6 +4,7 @@ import (
 	"management-book/configs"
 	"management-book/models"
 	"management-book/routes"
+	"os"
 
 	"github.com/labstack/echo/v4"
 )
@@ -20,5 +21,11 @@ func main() {
 
 	routes.InitRoute(e)
 
-	e.Logger.Fatal(e.Start(":8081"))
+	//e.Logger.Fatal(e.Start(":8081"))
+	e.Logger.Fatal(e.Start(GetPort()))
+}
+
+func GetPort() {
+	port := os.Getenv("PORT")
+	return ":" + port
 }
