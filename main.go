@@ -10,7 +10,7 @@ import (
 )
 
 func init() {
-	configs.LoadEnv()
+	//configs.LoadEnv()
 	configs.InitDatabase()
 }
 
