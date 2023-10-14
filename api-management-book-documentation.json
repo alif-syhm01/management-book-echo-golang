@@ -1,0 +1,645 @@
+{
+	"info": {
+		"_postman_id": "9d1e62be-78db-429a-991c-7436c85ddfcf",
+		"name": "Management Book",
+		"description": "Simple system for managing your book",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14053478"
+	},
+	"item": [
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Get Books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/books",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books"
+							]
+						},
+						"description": "For get all book data"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/books/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								"1"
+							]
+						},
+						"description": "For get book based on id"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Buku 2\",\r\n    \"publication_year\": 2023,\r\n    \"price\": 290000,\r\n    \"author_id\": 1,\r\n    \"genre_id\": [2, 4]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/books",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books"
+							]
+						},
+						"description": "For add new book data"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Buku 2\",\r\n    \"publication_year\": 2023,\r\n    \"price\": 270000,\r\n    \"author_id\": 1,\r\n    \"genre_id\": [6,7,9]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/books/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								"2"
+							]
+						},
+						"description": "For update book data based on id"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/books/8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								"8"
+							]
+						},
+						"description": "For delete book data based on id"
+					},
+					"response": []
+				}
+			],
+			"description": "For testing API Books"
+		},
+		{
+			"name": "Genres",
+			"item": [
+				{
+					"name": "Get Genres",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/genres",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"genres"
+							]
+						},
+						"description": "For get all genre data"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Genre",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/genres/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"genres",
+								"1"
+							]
+						},
+						"description": "For get genre data based on id"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Genre",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Genre 10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/genres",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"genres"
+							]
+						},
+						"description": "For add new genre data"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Genre",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Buku Masak",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/genres/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"genres",
+								"4"
+							]
+						},
+						"description": "For update genre data based on id"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Genre",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/genres/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"genres",
+								"4"
+							]
+						},
+						"description": "For delete genre data based on id"
+					},
+					"response": []
+				}
+			],
+			"description": "For testing API Books"
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Alif",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "alif@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "alif1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						},
+						"description": "User register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "alif@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "alif1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						},
+						"description": "User Login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authors",
+			"item": [
+				{
+					"name": "Get Authors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/authors",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"authors"
+							]
+						},
+						"description": "For get all author data"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/authors/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"authors",
+								"1"
+							]
+						},
+						"description": "For get author data based on id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Author Books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/author-books",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"author-books"
+							]
+						},
+						"description": "For get all author books data"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Author Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/author-books/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"author-books",
+								"1"
+							]
+						},
+						"description": "For get author book based on id"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "nationality",
+									"value": "Unknown",
+									"type": "text"
+								},
+								{
+									"key": "biography",
+									"value": "Biography of Test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/authors",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"authors"
+							]
+						},
+						"description": "For add new data author"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Lee Ji-eun",
+									"type": "text"
+								},
+								{
+									"key": "nationality",
+									"value": "Korean",
+									"type": "text"
+								},
+								{
+									"key": "biography",
+									"value": "Biography of Lee Ji-eun",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/authors/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"authors",
+								"5"
+							]
+						},
+						"description": "For update data author based on id"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/authors/6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"authors",
+								"6"
+							]
+						},
+						"description": "For delete data author based on id"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
